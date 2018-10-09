@@ -60,12 +60,17 @@ export default {
 <style lang="stylus" scoped>
     .wrapper >>> .swiper-pagination-bullet-active
       background: #fff
+    .wrapper >>> .swiper-pagination-bullet
+      width: 6px
+      height: 6px
+      margin: 0 4px
+    >>> .swiper-pagination-bullets
+      bottom: 6px
     .wrapper
       height: 0
       padding-bottom: 26.67%
       background: #eee
       .swiper-img
         width: 100%
-
 </style>
 
