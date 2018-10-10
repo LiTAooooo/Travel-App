@@ -18,30 +18,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data() {
-    return {
-      weekendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1509/f3/63699e98d68fe7.jpg_r_640x214_89c28b03.jpg',
-        title: '感受滨城的秋',
-        desc: '天凉好个秋，大连赏秋好去处你造吗？',
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1509/f3/63699e98d68fe7.jpg_r_640x214_89c28b03.jpg',
-        title: '感受滨城的秋',
-        desc: '天凉好个秋，大连赏秋好去处你造吗？',
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1509/f3/63699e98d68fe7.jpg_r_640x214_89c28b03.jpg',
-        title: '感受滨城的秋',
-        desc: '天凉好个秋，大连赏秋好去处你造吗？',
-      }, {
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1509/f3/63699e98d68fe7.jpg_r_640x214_89c28b03.jpg',
-        title: '感受滨城的秋',
-        desc: '天凉好个秋，大连赏秋好去处你造吗？',
-      }],
-    };
+  props: {
+    weekendList: Array,
   },
 };
 </script>

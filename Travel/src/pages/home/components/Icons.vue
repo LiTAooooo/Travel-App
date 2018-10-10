@@ -15,49 +15,11 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    iconList: Array,
+  },
   data() {
     return {
-      iconList: [{
-        id: '001',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票',
-      }, {
-        id: '002',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/4c/eac47dd8def8de02.png',
-        desc: '去赏花',
-      }, {
-        id: '003',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png',
-        desc: '成都必游',
-      }, {
-        id: '004',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/e3/67df61427c8e1302.png',
-        desc: '川剧变脸',
-      }, {
-        id: '005',
-        imgUrl: 'https://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-        desc: '打卡圣地',
-      }, {
-        id: '006',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/ea/01d081dacb03cc02.png',
-        desc: '赏秋色',
-      }, {
-        id: '007',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-        desc: '一日游',
-      }, {
-        id: '008',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/54/35899492b1302802.png',
-        desc: '成都熊猫基地',
-      }, {
-        id: '009',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/54/35899492b1302802.png',
-        desc: '成都熊猫基地',
-      }, {
-        id: '0010',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/54/35899492b1302802.png',
-        desc: '成都熊猫基地',
-      }],
       swiperOption: {
         pagination: '.swiper-pagination',
         paginationClickable: true,
@@ -110,7 +72,7 @@ export default {
             width: 1.1rem
         .icon-desc
           margin-top: .1rem
-          height: .28rem
-          line-height: .28rem
+          height: .32rem
+          line-height: .32rem
           ellipsis()
 </style>
