@@ -24,12 +24,12 @@ export default {
     };
   },
   props: {
-  swiperList: Array,
+    swiperList: Array,
   },
   computed: {
     showSwiper() {
       return this.swiperList.length;
-    }
+    },
   },
 };
 </script>
