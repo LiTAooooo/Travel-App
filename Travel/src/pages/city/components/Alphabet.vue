@@ -2,20 +2,47 @@
     <ul class="list">
         <li
           class="item"
-          v-for="(city, key) of cities"
-          :key="key"
+          v-for="letter of letters"
+          :key="letter"
+          :ref="letter"
+          @click="handleAlphabetClick"
+          @touchmove="handleTouchMove"
         >
-          {{key}}
+          {{letter}}
         </li>
     </ul>
 </template>
 
 <script>
-
 export default {
   name: 'CityAlphabet',
   props: {
     cities: Object,
+  },
+  methods: {
+    handleAlphabetClick(e) {
+      this.$emit('change', e.target.innerText);
+    },
+    handleTouchMove(e) {
+      const currentClientY = e.touches[0].clientY;
+      const index = Math.floor((currentClientY - this.firstLetterClientY) / 20);
+      if (index >= 0 && index < this.letters.length) {
+        this.$emit('change', this.letters[index]);
+      }
+    },
+  },
+  computed: {
+    letters() {
+      const letters = [];
+      for (let i in this.cities) {
+        letters.push(i);
+      }
+      return letters;
+    },
+    firstLetterClientY() {
+      const firstLetter = this.letters[0];
+      return this.$refs[firstLetter][0].offsetTop;
+    },
   },
 };
 </script>
@@ -27,11 +54,13 @@ export default {
     flex-direction: column
     justify-content: center
     position: fixed
-    top: $headerHeight + .72rem;
+    top: 0
     bottom: 0
     right: 0
-    padding-right: .12rem
+    padding-top: $cityListOffsetTop
     .item
+      text-align: center
+      width: .5rem
       line-height: .4rem
       color: $bgColor
 </style>

@@ -21,6 +21,7 @@
               class="area"
               v-for="(city, key) of cities"
               :key="key"
+              :ref="key"
             >
                 <div class="title border-topbottom">{{key}}</div>
                 <ul class="item-list">
@@ -45,9 +46,18 @@ export default {
   props: {
     hotCities: Array,
     cities: Object,
+    letter: String,
+  },
+  watch: {
+    letter() {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0];
+        this.scroll.scrollToElement(element);
+      }
+    },
   },
   mounted() {
-    const scroll = new Bscroll('.list');
+    this.scroll = new Bscroll('.list');
   },
 };
 </script>
@@ -65,7 +75,7 @@ export default {
   .list
     overflow: hidden
     position: fixed
-    top: $headerHeight + .72rem;
+    top: $cityListOffsetTop
     left: 0;
     right: 0;
     bottom: 0;
