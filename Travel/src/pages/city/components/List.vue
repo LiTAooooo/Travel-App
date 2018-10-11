@@ -5,14 +5,19 @@
                 <div class="title border-topbottom">当前城市</div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                        <div class="button">北京</div>
+                        <div class="button">{{this.$store.state.city}}</div>
                     </div>
                 </div>
             </div>
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
-                    <div class="button-wrapper" v-for="hotCity of hotCities" :key="hotCity.id">
+                    <div
+                      class="button-wrapper"
+                      v-for="hotCity of hotCities"
+                      :key="hotCity.id"
+                      @click="handleCityClick(hotCity.name)"
+                    >
                         <div class="button">{{hotCity.name}}</div>
                     </div>
                 </div>
@@ -29,6 +34,7 @@
                       class="item border-bottom"
                       v-for="item of city"
                       :key="item.id"
+                      @click="handleCityClick(item.name)"
                     >
                       {{item.name}}
                     </li>
@@ -47,6 +53,12 @@ export default {
     hotCities: Array,
     cities: Object,
     letter: String,
+  },
+  methods: {
+    handleCityClick(city) {
+      this.$store.commit('changeCity', city);
+      this.$router.push('/');
+    },
   },
   watch: {
     letter() {

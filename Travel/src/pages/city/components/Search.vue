@@ -12,6 +12,7 @@
                 v-for="item of queryList"
                 :key="item.id"
                 class="search-item border-bottom"
+                @click="handleCityClick(item.name)"
               >
                 {{item.name}}
               </li>
@@ -32,6 +33,12 @@ export default {
       queryTimer: null,
       queryList: [],
     };
+  },
+  methods: {
+    handleCityClick(city) {
+      this.$store.commit('changeCity', city);
+      this.$router.push('/');
+    },
   },
   props: {
     cities: Object,
