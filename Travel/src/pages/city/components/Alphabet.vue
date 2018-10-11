@@ -44,7 +44,7 @@ export default {
   computed: {
     letters() {
       const letters = [];
-      for (let i in this.cities) {
+      for (const i in this.cities) {
         letters.push(i);
       }
       return letters;

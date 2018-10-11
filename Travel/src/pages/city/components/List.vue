@@ -76,9 +76,9 @@ export default {
     overflow: hidden
     position: fixed
     top: $cityListOffsetTop
-    left: 0;
-    right: 0;
-    bottom: 0;
+    left: 0
+    right: 0
+    bottom: 0
     .title
       line-height: .54rem
       background: #eee
