@@ -19,16 +19,26 @@ export default {
   props: {
     cities: Object,
   },
+  data() {
+    return {
+      timer: null,
+    };
+  },
   methods: {
     handleAlphabetClick(e) {
       this.$emit('change', e.target.innerText);
     },
     handleTouchMove(e) {
-      const currentClientY = e.touches[0].clientY;
-      const index = Math.floor((currentClientY - this.firstLetterClientY) / 20);
-      if (index >= 0 && index < this.letters.length) {
-        this.$emit('change', this.letters[index]);
+      if (this.timer) {
+        clearTimeout(this.timer);
       }
+      this.timer = setTimeout(() => {
+        const currentClientY = e.touches[0].clientY;
+        const index = Math.floor((currentClientY - this.firstLetterClientY) / 20);
+        if (index >= 0 && index < this.letters.length) {
+          this.$emit('change', this.letters[index]);
+        }
+      }, 16);
     },
   },
   computed: {
