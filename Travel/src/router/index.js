@@ -22,6 +22,6 @@ export default new Router({
       path: '/detail/:id',
       name: 'Detail',
       component: Detail,
-    }
+    },
   ],
 });
