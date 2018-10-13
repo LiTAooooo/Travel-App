@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-        <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1412/89/66dadfb4d982e6f88abad45a3e062342.water.jpg_600x330_4e043224.jpg" />
+        <img class="banner-img" :src="bannerImg" />
         <div class="banner-info">
-            <div class="banner-title">曲江海洋极地公园(AAAA景区)</div>
+            <div class="banner-title">{{this.sightName}}</div>
             <div class="banner-num">
-                <span class="iconfont banner-icon">&#xe600;</span>{{this.imgs.length}}
+                <span class="iconfont banner-icon">&#xe600;</span>{{this.gallaryImgs.length}}
             </div>
         </div>
         <div class="bg-gradient"></div>
@@ -13,7 +13,7 @@
     <common-gallery
       v-show="showGallery"
       @closeGallery="handleCloseGallery"
-      :imgs="imgs"
+      :imgs="gallaryImgs"
     ></common-gallery>
   </div>
 </template>
@@ -26,10 +26,14 @@ export default {
   components: {
     CommonGallery,
   },
+  props: {
+    bannerImg: String,
+    sightName: String,
+    gallaryImgs: Array,
+  },
   data() {
     return {
       showGallery: false,
-      imgs: ['http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_r_800x800_e9c1d2be.jpg', 'http://img1.qunarzz.com/sight/p0/1709/76/7691528bc7d7ad3ca3.img.png_r_800x800_56e729ef.png'],
     };
   },
   methods: {
