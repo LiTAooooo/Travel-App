@@ -22,7 +22,7 @@
 
 <script>
 import CommonGallery from 'common/gallery/Gallery';
-import FadeAnimation from 'common/fade-animation/fadeAnimation'
+import FadeAnimation from 'common/fade-animation/fadeAnimation';
 
 export default {
   name: 'DetailBanner',
