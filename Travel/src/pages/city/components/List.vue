@@ -97,11 +97,11 @@ export default {
     right: 0
     bottom: 0
     .title
-      line-height: .54rem
+      line-height: .72rem
       background: #eee
       padding-left: .2rem
       color: #666
-      font-size: .26rem
+      font-size: .30rem
     .button-list
       display: flex
       flex-wrap: wrap
@@ -111,11 +111,13 @@ export default {
         text-align: center
         .button
           margin: .1rem
-          padding: .1rem 0
+          padding: .16rem 0
           border: .02rem solid #ccc
           border-radius: .06rem
+          font-size: .30rem
     .item-list
       .item
-        line-height: .76rem
         padding-left: .2rem
+        line-height: .82rem
+        font-size: .32rem
 </style>

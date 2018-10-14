@@ -110,8 +110,9 @@ export default {
     bottom: 0
     background: #eee
     .search-item
-      line-height: .62rem
+      line-height: .82rem
       padding-left: .2rem
+      font-size: .32rem
       color: #666
       background: #fff
 </style>
