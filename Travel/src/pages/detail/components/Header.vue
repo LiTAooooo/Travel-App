@@ -39,10 +39,10 @@ export default {
       }
     },
   },
-  activated() {
+  mounted() {
     window.addEventListener('scroll', this.handleScroll);
   },
-  deactivated() {
+  destroyed() {
     window.removeEventListener('scroll', this.handleScroll);
   },
 };
