@@ -74,7 +74,7 @@ export default {
     },
   },
   mounted() {
-    this.scroll = new Bscroll('.list');
+    this.scroll = new Bscroll('.list', {click: true});
   },
 };
 </script>
