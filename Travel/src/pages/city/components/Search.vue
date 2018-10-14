@@ -1,6 +1,7 @@
 <template>
   <div>
       <div class="search">
+          <span class="iconfont search-icon">&#xe632;</span>
           <input v-model="keyword" class="search-input" type="text" placeholder="输入城市名或拼音" />
       </div>
       <div
@@ -81,16 +82,22 @@ export default {
 <style lang="stylus" scoped>
   @import '~styles/variables.styl'
   .search
+    position: relative
     padding: 0 .1rem
     height: $searchHeight
     background: $bgColor
+    .search-icon
+      position: absolute
+      top: .14rem
+      left: .24rem
+      color: #666
     .search-input
       box-sizing: border-box
       width: 100%
-      padding: 0 .1rem
       height: .62rem
-      line-height: .62rem
-      text-align: center
+      padding: .13rem .16rem .13rem .56rem
+      font-size: .30rem
+      line-height: .36rem
       border-radius: .06rem
       color: #666
   .search-content
