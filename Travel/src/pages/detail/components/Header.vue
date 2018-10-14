@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     handleScroll() {
-      const scrollTop = document.documentElement.scrollTop;
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
       if (scrollTop > 0) {
         this.showHeader = true;
         this.opacityStyle.opacity = scrollTop <= 163 ? scrollTop / 163 : 1;

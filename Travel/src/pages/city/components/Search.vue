@@ -73,7 +73,7 @@ export default {
     },
   },
   mounted() {
-    this.scroll = new Bscroll('.search-content');
+    this.scroll = new Bscroll('.search-content', { click: true });
   },
 };
 </script>
