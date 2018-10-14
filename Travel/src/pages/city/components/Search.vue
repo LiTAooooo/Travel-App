@@ -2,7 +2,13 @@
   <div>
       <div class="search">
           <span class="iconfont search-icon">&#xe632;</span>
-          <input v-model="keyword" class="search-input" type="text" placeholder="输入城市名或拼音" />
+          <input
+            v-model="keyword"
+            class="search-input"
+            type="text"
+            placeholder="输入城市名或拼音" 
+            @focus="handleInputFocus"
+            @blur="handleInputBlur"/>
       </div>
       <div
         class="search-content"
@@ -42,6 +48,13 @@ export default {
       this.$router.push('/');
     },
     ...mapMutations(['changeCity']),
+    ...mapMutations(['changeInputState']),
+    handleInputFocus() {
+      this.changeInputState(true);
+    },
+    handleInputBlur() {
+      this.changeInputState(false);
+    },
   },
   props: {
     cities: Object,

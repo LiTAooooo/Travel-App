@@ -7,4 +7,5 @@ try {
 
 export default {
   city: defaultCity,
+  searchInputFocused: false,
 };

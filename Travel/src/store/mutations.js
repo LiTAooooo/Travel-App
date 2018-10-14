@@ -5,4 +5,7 @@ export default {
       localStorage.city = city;
     } catch (e) {}
   },
+  changeInputState(state, tag) {
+    state.searchInputFocused = tag;
+  },
 };

@@ -7,6 +7,7 @@
           :ref="letter"
           @click="handleAlphabetClick"
           @touchmove="handleTouchMove"
+          v-show="!searchInputFocused"
         >
           {{letter}}
         </li>
@@ -14,6 +15,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'CityAlphabet',
   props: {
@@ -53,6 +56,7 @@ export default {
       const firstLetter = this.letters[0];
       return this.$refs[firstLetter][0].offsetTop;
     },
+    ...mapState(['searchInputFocused']),
   },
 };
 </script>
