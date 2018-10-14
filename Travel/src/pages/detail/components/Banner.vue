@@ -10,21 +10,25 @@
         </div>
         <div class="bg-gradient"></div>
     </div>
-    <common-gallery
-      v-show="showGallery"
-      @closeGallery="handleCloseGallery"
-      :imgs="gallaryImgs"
-    ></common-gallery>
+    <fade-animation>
+      <common-gallery
+        v-show="showGallery"
+        @closeGallery="handleCloseGallery"
+        :imgs="gallaryImgs"
+      ></common-gallery>
+    </fade-animation>
   </div>
 </template>
 
 <script>
 import CommonGallery from 'common/gallery/Gallery';
+import FadeAnimation from 'common/fade-animation/fadeAnimation'
 
 export default {
   name: 'DetailBanner',
   components: {
     CommonGallery,
+    FadeAnimation,
   },
   props: {
     bannerImg: String,
