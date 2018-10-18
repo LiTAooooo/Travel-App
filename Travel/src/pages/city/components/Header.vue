@@ -28,5 +28,4 @@ export default {
       width: .64rem
       text-align: center
       font-size: .4rem
-
 </style>

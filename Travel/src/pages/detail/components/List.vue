@@ -5,11 +5,15 @@
           v-for="(item, index) of list"
           :key="index"
         >
-          <div class="item-title border-bottom">
-              <span class="item-title-icon"></span>
-              {{item.title}}
-          </div>
-          <detail-list :list="item.children" class="item-children"></detail-list>
+            <div class="item-title border-bottom">
+                <span class="item-title-icon"></span>
+                {{item.title}}
+            </div>
+
+            <detail-list
+              :list="item.children"
+              class="item-children"
+            ></detail-list>
         </div>
     </div>
 </template>

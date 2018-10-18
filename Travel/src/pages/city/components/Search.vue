@@ -10,6 +10,7 @@
             @focus="handleInputFocus"
             @blur="handleInputBlur"/>
       </div>
+
       <div
         class="search-content"
         v-show="keyword"
@@ -23,6 +24,7 @@
               >
                 {{item.name}}
               </li>
+              
               <li class="search-item border-bottom" v-show="!hasQueryResult">无匹配城市</li>
           </ul>
       </div>

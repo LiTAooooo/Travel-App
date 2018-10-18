@@ -9,6 +9,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="button-list">
@@ -22,6 +23,7 @@
                     </div>
                 </div>
             </div>
+            
             <div
               class="area"
               v-for="(city, key) of cities"

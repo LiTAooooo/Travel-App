@@ -6,12 +6,18 @@
           class="back-icon iconfont"
           v-show="!showHeader"
         >&#xe624;</router-link>
-        <div class="detail-header" v-show="showHeader" :style="opacityStyle">
+
+        <div
+          class="detail-header"
+          v-show="showHeader"
+          :style="opacityStyle"
+        >
             <router-link
               class="detail-back-icon iconfont"
               tag="span"
               to="/"
-            >&#xe624;</router-link>景点详情
+            >&#xe624;</router-link>
+            景点详情
         </div>
     </div>
 </template>

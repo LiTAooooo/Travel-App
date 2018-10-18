@@ -1,22 +1,23 @@
 <template>
   <div>
-    <div class="banner" @click="handleBannerClick">
-        <img class="banner-img" :src="bannerImg" />
-        <div class="banner-info">
-            <div class="banner-title">{{this.sightName}}</div>
-            <div class="banner-num">
-                <span class="iconfont banner-icon">&#xe600;</span>{{this.gallaryImgs.length}}
-            </div>
-        </div>
-        <div class="bg-gradient"></div>
-    </div>
-    <fade-animation>
-      <common-gallery
-        v-show="showGallery"
-        @closeGallery="handleCloseGallery"
-        :imgs="gallaryImgs"
-      ></common-gallery>
-    </fade-animation>
+      <div class="banner" @click="handleBannerClick">
+          <img class="banner-img" :src="bannerImg" />
+          <div class="banner-info">
+              <div class="banner-title">{{this.sightName}}</div>
+              <div class="banner-num">
+                  <span class="iconfont banner-icon">&#xe600;</span>{{this.gallaryImgs.length}}
+              </div>
+          </div>
+          <div class="bg-gradient"></div>
+      </div>
+      
+      <fade-animation>
+          <common-gallery
+            v-show="showGallery"
+            @closeGallery="handleCloseGallery"
+            :imgs="gallaryImgs"
+          ></common-gallery>
+      </fade-animation>
   </div>
 </template>
 
