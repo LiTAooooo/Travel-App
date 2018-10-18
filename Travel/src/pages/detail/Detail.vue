@@ -29,15 +29,19 @@ export default {
       sightName: '',
       bannerImg: '',
       gallaryImgs: [],
+      CurrentId: '',
     };
   },
   methods: {
     getDetailInfo() {
-      axios.get('/api/detail.json', {
-        params: {
-          id: this.$route.params.id,
-        },
-      }).then(this.handleGetDataSucc);
+      if (this.CurrentId !== this.$route.params.id) {
+        this.CurrentId = this.$route.params.id;
+        axios.get('/api/detail.json', {
+          params: {
+            id: this.CurrentId,
+          },
+        }).then(this.handleGetDataSucc);
+      }
     },
     handleGetDataSucc(res) {
       res = res.data;
