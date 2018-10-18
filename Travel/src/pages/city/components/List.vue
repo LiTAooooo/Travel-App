@@ -96,6 +96,7 @@ export default {
     left: 0
     right: 0
     bottom: 0
+    z-index: -1
     .title
       line-height: .72rem
       background: #eee

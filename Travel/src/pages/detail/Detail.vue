@@ -7,7 +7,6 @@
         ></detail-banner>
         <detail-header></detail-header>
         <detail-list :list="list"></detail-list>
-        <div class="content"></div>
     </div>
 </template>
 
@@ -51,13 +50,11 @@ export default {
       }
     },
   },
-  mounted() {
+  activated() {
     this.getDetailInfo();
   },
 };
 </script>
 
 <style lang="stylus" scoped>
-  .content
-    height: 50rem
 </style>
